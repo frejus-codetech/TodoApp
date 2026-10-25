@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faPlus, faPen } from "@fortawesome/free-solid-svg-icons";      
 import { faClock, faCircle,faCircleCheck, faTrashCan, } from "@fortawesome/free-regular-svg-icons";
 import { useState } from 'react';
-
+import API_URL from "./api";
 
 
 
@@ -42,7 +42,7 @@ function Todo({tasks , setTasks , filter , setFilter, loading}) {
         if (Tasktitle.trim() == ''){
             return;
         }
-    fetch("http://localhost:3005/tasks", {
+    fetch(API_URL, {
     method: "POST",
     headers: {
         "Content-Type": "application/json"
@@ -94,7 +94,7 @@ function Todo({tasks , setTasks , filter , setFilter, loading}) {
             const task = tasks.find(task => task._id === id);
             if (!task) return;
 
-        fetch(`http://localhost:3005/tasks/${id}` , {
+        fetch(`${API_URL}/${id}` , {
             method:"PATCH",
             headers: {
                 "Content-Type": "application/json"
@@ -125,7 +125,7 @@ function Todo({tasks , setTasks , filter , setFilter, loading}) {
 
      //supprimer une tache
     const handleDeleteTask = (_id) => {
-        fetch(`http://localhost:3005/tasks/${_id}`, {
+        fetch(`${API_URL}/${_id}`, {
             method: "DELETE"
         })
             .then(async response => {
@@ -171,7 +171,7 @@ function Todo({tasks , setTasks , filter , setFilter, loading}) {
    const handleEditTask = async (id, newTitle) => {
     try {
         const response = await fetch(
-            `http://localhost:3005/tasks/${id}`,
+            `${API_URL}/${id}`,
             {
                 method: "PATCH",
                 headers: {

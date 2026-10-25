@@ -59,7 +59,7 @@ router.post("/", async (req,res)=>{
     const title = req.body?.title ;
 
     if(typeof title !== "string" || title.trim() === ""){
-        return res.status(400)({
+        return res.status(400).json({
             message:"la tâche est obligatoire"
         })
     }
@@ -131,8 +131,8 @@ if (Object.hasOwn(req.body ?? {}, "completed")){
             })
 
         if(!task){
-        res.status(404).json({
-            message:"Tâche introuvable"
+       return res.status(404).json({
+         message:"Tâche introuvable"
         })
         }
 

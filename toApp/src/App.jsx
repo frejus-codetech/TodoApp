@@ -3,6 +3,7 @@ import './App.css'
 import Sidebar from './composant/sidebar/sidebar.jsx';
 import Header from './composant/header/header.jsx'; 
 import Todo from './composant/todo/todo.jsx'; 
+import API_URL from './API.js';
 function App() {
     const [tasks, setTasks] = useState( () => {
       const saveTask = localStorage.getItem("tasks");
@@ -13,7 +14,7 @@ function App() {
     () => { localStorage.setItem("tasks", JSON.stringify(tasks))} , [tasks]);*/
 
     useEffect(() => {
-      fetch("http://localhost:3005/tasks")
+      fetch(API_URL)
         .then(response => {
           if(!response.ok){
             throw new Error ("Erreur lors de la récupération de la tâche");
