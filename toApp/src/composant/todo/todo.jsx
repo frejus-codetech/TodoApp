@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faPlus, faPen } from "@fortawesome/free-solid-svg-icons";      
 import { faClock, faCircle,faCircleCheck, faTrashCan, } from "@fortawesome/free-regular-svg-icons";
 import { useState } from 'react';
-import API_URL from "./api";
+import API_URL from '../../../API';
 
 
 

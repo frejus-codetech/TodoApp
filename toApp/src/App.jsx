@@ -3,7 +3,7 @@ import './App.css'
 import Sidebar from './composant/sidebar/sidebar.jsx';
 import Header from './composant/header/header.jsx'; 
 import Todo from './composant/todo/todo.jsx'; 
-import API_URL from '../../src/API.js';
+import API_URL from '../API.js';
 function App() {
     const [tasks, setTasks] = useState( () => {
       const saveTask = localStorage.getItem("tasks");
