@@ -7,7 +7,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-    origin: "http://localhost:5173"
+    origin: ["http://localhost:5173", "https://todo-app-five-inky-77.vercel.app"]
 }))
 app.use("/tasks",TaskRoutes)
 const startServer = async () => { 
