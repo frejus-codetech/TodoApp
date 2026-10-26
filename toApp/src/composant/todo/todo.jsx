@@ -241,10 +241,6 @@ function Todo({tasks , setTasks , filter , setFilter, loading}) {
 }
 
 
-
-
-
-
   return (
     <div className='todo'>
         <div className="start">

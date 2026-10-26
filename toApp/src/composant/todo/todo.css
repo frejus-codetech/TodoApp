@@ -155,7 +155,7 @@
     border-radius: 10px;
     background-color: rgba(241, 8, 8, 0.15);
     position: absolute;
-    right: 230px;
+    right: 150px;
     color: rgb(247, 9, 61);
     cursor: pointer;
 }
@@ -221,8 +221,8 @@
   }
 
   .load{
-    color: #fff;
+    color: #999393;
     position: absolute;
-    left: 500px;
-    font-size: 1.5rem;
+    left: 300px;
+    font-size: 1.2rem;
   }
